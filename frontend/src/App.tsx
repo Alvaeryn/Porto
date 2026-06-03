@@ -37,8 +37,6 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const whatsappLink = 'https://wa.me/628818411915?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20layanan%20Anda.';
-
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />

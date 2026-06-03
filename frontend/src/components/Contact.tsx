@@ -12,12 +12,10 @@ const Contact = () => {
     message: '',
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setSubmitStatus('idle');
 
     try {
       const response = await fetch(API_ENDPOINTS.contact, {
@@ -31,16 +29,13 @@ const Contact = () => {
       const result = await response.json();
       
       if (result.status === 'success') {
-        setSubmitStatus('success');
         alert('Pesan kamu berhasil dikirim! Saya akan segera menghubungi kamu.');
         setFormData({ name: '', email: '', whatsapp: '', service: '', message: '' });
       } else {
-        setSubmitStatus('error');
         alert('Terjadi kesalahan, silakan coba lagi!');
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      setSubmitStatus('error');
       alert('Terjadi kesalahan, silakan coba lagi!');
     } finally {
       setIsLoading(false);
