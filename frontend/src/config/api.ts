@@ -1,5 +1,5 @@
 // Base URL for API
-export const API_BASE_URL = 'http://localhost:5001';
+export const API_BASE_URL = 'https://alvaeryn-portfolio-backend.hf.space';
 
 // API Endpoints
 export const API_ENDPOINTS = {
