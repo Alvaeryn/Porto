@@ -1,8 +1,38 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useScrollFade } from '../hooks/useScrollFade';
 
+interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  rating: number;
+}
+
+const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
+  const { ref, isVisible } = useScrollAnimation(0.3);
+  
+  const animations = ['animate-fade-left', 'animate-fade-up', 'animate-fade-right'];
+  const animationClass = animations[index % animations.length];
+  
+  return (
+    <div 
+      ref={ref}
+      className={`bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 animate-on-scroll ${animationClass} ${isVisible ? 'visible' : ''}`}
+    >
+      <div className="text-yellow-400 text-2xl mb-4">
+        {'⭐'.repeat(testimonial.rating)}
+      </div>
+      <p className="text-slate-700 dark:text-slate-300 mb-6 text-lg italic">"{testimonial.content}"</p>
+      <div>
+        <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
+        <p className="text-slate-500 dark:text-slate-400 text-sm">{testimonial.role}</p>
+      </div>
+    </div>
+  );
+};
+
 const Testimonials = () => {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       name: 'Rizky Pratama',
       role: 'Owner Toko Fashion',
@@ -23,8 +53,7 @@ const Testimonials = () => {
     }
   ];
 
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.1);
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.1);
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
   const { ref: contentRef, opacity, scale } = useScrollFade();
 
   return (
@@ -43,18 +72,9 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Apa Kata Mereka?</h2>
         </div>
         
-        <div ref={cardsRef} className={`grid md:grid-cols-3 gap-8 animate-on-scroll stagger-children ${cardsVisible ? 'visible' : ''}`}>
+        <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, i) => (
-            <div key={i} className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800">
-              <div className="text-yellow-400 text-2xl mb-4">
-                {'⭐'.repeat(testimonial.rating)}
-              </div>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 text-lg italic">"{testimonial.content}"</p>
-              <div>
-                <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
-                <p className="text-slate-500 dark:text-slate-400 text-sm">{testimonial.role}</p>
-              </div>
-            </div>
+            <TestimonialCard key={i} testimonial={testimonial} index={i} />
           ))}
         </div>
       </div>

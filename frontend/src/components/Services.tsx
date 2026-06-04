@@ -1,8 +1,41 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useScrollFade } from '../hooks/useScrollFade';
 
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+const ServiceCard = ({ service, index }: { service: Service; index: number }) => {
+  const { ref, isVisible } = useScrollAnimation(0.3);
+  
+  const animations = ['animate-fade-up', 'animate-scale-up', 'animate-fade-right', 'animate-fade-left', 'animate-rotate', 'animate-slide-up-bounce'];
+  const animationClass = animations[index % animations.length];
+  
+  return (
+    <div 
+      ref={ref}
+      className={`bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:border-cyan-200 dark:hover:border-cyan-800 hover:-translate-y-2 transition-all animate-on-scroll ${animationClass} ${isVisible ? 'visible' : ''}`}
+    >
+      <div className="text-5xl mb-5">{service.icon}</div>
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
+      <p className="text-slate-600 dark:text-slate-400 mb-5">{service.description}</p>
+      <ul className="space-y-2">
+        {service.features.map((feature, j) => (
+          <li key={j} className="flex items-center text-sm text-slate-700 dark:text-slate-300">
+            <span className="text-cyan-500 dark:text-cyan-400 mr-2">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const Services = () => {
-  const services = [
+  const services: Service[] = [
     {
       icon: '🌐',
       title: 'Web Development',
@@ -41,7 +74,7 @@ const Services = () => {
     }
   ];
 
-  const { ref: headerRef, isVisible } = useScrollAnimation(0.1);
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
   const { ref: contentRef, opacity, scale } = useScrollFade();
 
   return (
@@ -55,26 +88,14 @@ const Services = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
-        <div ref={headerRef} className={`text-center mb-12 animate-on-scroll animate-fade-down ${isVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-12 animate-on-scroll animate-fade-down ${headerVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Keahlian Saya</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Layanan yang Saya Sediakan</h2>
         </div>
         
-        <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll stagger-scale ${isVisible ? 'visible' : ''}`}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
-            <div key={i} className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:border-cyan-200 dark:hover:border-cyan-800 hover:-translate-y-2 transition-all">
-              <div className="text-5xl mb-5">{service.icon}</div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-5">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, j) => (
-                  <li key={j} className="flex items-center text-sm text-slate-700 dark:text-slate-300">
-                    <span className="text-cyan-500 dark:text-cyan-400 mr-2">✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ServiceCard key={i} service={service} index={i} />
           ))}
         </div>
       </div>
