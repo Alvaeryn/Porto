@@ -75,7 +75,7 @@ const Contact = () => {
         }}
       >
         {/* Header */}
-        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-up ${headerVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-right ${headerVisible ? 'visible' : ''}`}>
           <span className="inline-block px-6 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
             Hubungi Saya
           </span>
@@ -88,7 +88,7 @@ const Contact = () => {
         </div>
 
         {/* Top Info Cards */}
-        <div ref={topCardsRef} className={`grid md:grid-cols-2 gap-5 mb-10 max-w-3xl mx-auto animate-on-scroll stagger-children ${topCardsVisible ? 'visible' : ''}`}>
+        <div ref={topCardsRef} className={`grid md:grid-cols-2 gap-5 mb-10 max-w-3xl mx-auto animate-on-scroll stagger-left ${topCardsVisible ? 'visible' : ''}`}>
           {topContacts.map((contact, i) => (
             <div key={i} className="bg-white dark:bg-slate-900 p-7 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:shadow-lg transition-all">
               <div className="text-3xl mb-3">{contact.icon}</div>
@@ -99,7 +99,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Cards */}
-        <div ref={bottomCardsRef} className={`grid md:grid-cols-3 gap-5 mb-12 max-w-4xl mx-auto animate-on-scroll stagger-children ${bottomCardsVisible ? 'visible' : ''}`}>
+        <div ref={bottomCardsRef} className={`grid md:grid-cols-3 gap-5 mb-12 max-w-4xl mx-auto animate-on-scroll stagger-right ${bottomCardsVisible ? 'visible' : ''}`}>
           {bottomContacts.map((contact, i) => (
             <div
               key={i}
@@ -131,7 +131,7 @@ const Contact = () => {
         </div>
 
         {/* Form */}
-        <div ref={formRef} className={`max-w-3xl mx-auto animate-on-scroll animate-fade-up ${formVisible ? 'visible' : ''}`}>
+        <div ref={formRef} className={`max-w-3xl mx-auto animate-on-scroll animate-fade-left ${formVisible ? 'visible' : ''}`}>
           <div className="bg-white dark:bg-slate-900 p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg">
             <h3 className="text-center font-bold text-slate-900 dark:text-white mb-6 text-2xl">
               📩 Kirim Pesan Langsung

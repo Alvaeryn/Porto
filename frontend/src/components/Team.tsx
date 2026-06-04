@@ -68,12 +68,12 @@ const Team = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
-        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-up ${headerVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-rotate ${headerVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Tim Kami</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Orang-Orang Hebat di Balik Layar</h2>
         </div>
         
-        <div ref={cardsRef} className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-on-scroll stagger-children ${cardsVisible ? 'visible' : ''}`}>
+        <div ref={cardsRef} className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 animate-on-scroll stagger-right ${cardsVisible ? 'visible' : ''}`}>
           {teamMembers.map((member, i) => (
             <div key={i} className="bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 text-center hover:-translate-y-2 transition-all duration-300">
               <div className={`w-28 h-28 mx-auto mb-6 bg-gradient-to-br ${member.color} rounded-full flex items-center justify-center text-4xl font-bold text-white`}>

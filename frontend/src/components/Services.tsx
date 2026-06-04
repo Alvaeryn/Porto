@@ -55,12 +55,12 @@ const Services = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
-        <div ref={headerRef} className={`text-center mb-12 animate-on-scroll animate-fade-up ${isVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-12 animate-on-scroll animate-fade-down ${isVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Keahlian Saya</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Layanan yang Saya Sediakan</h2>
         </div>
         
-        <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll stagger-children ${isVisible ? 'visible' : ''}`}>
+        <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll stagger-scale ${isVisible ? 'visible' : ''}`}>
           {services.map((service, i) => (
             <div key={i} className="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:border-cyan-200 dark:hover:border-cyan-800 hover:-translate-y-2 transition-all">
               <div className="text-5xl mb-5">{service.icon}</div>

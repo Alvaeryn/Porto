@@ -60,12 +60,12 @@ const Projects = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
-        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-up ${headerVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-scale-up ${headerVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Portfolio</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Studi Kasus Proyek Terbaru</h2>
         </div>
         
-        <div ref={projectsRef} className={`space-y-12 animate-on-scroll stagger-children ${projectsVisible ? 'visible' : ''}`}>
+        <div ref={projectsRef} className={`space-y-12 animate-on-scroll stagger-left ${projectsVisible ? 'visible' : ''}`}>
           {projects.map((project, i) => (
             <div key={i} className="bg-white dark:bg-slate-950 p-8 md:p-12 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800">
               <div className="flex flex-col md:flex-row gap-8">

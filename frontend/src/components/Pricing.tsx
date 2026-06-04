@@ -38,12 +38,12 @@ const Pricing = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
-        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-up ${headerVisible ? 'visible' : ''}`}>
+        <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-bounce ${headerVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Harga</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Paket yang Sesuai untuk Kamu</h2>
         </div>
         
-        <div ref={packagesRef} className={`grid md:grid-cols-3 gap-8 animate-on-scroll stagger-children ${packagesVisible ? 'visible' : ''}`}>
+        <div ref={packagesRef} className={`grid md:grid-cols-3 gap-8 animate-on-scroll stagger-scale ${packagesVisible ? 'visible' : ''}`}>
           {packages.map((pkg, i) => (
             <div key={i} className={`p-8 rounded-2xl border-2 transition-all ${
               pkg.popular 
