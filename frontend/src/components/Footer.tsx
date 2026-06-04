@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-3">
-              <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-10 w-10" />
+              <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-14 w-14" />
               <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
                 Alvaeryn
               </div>
