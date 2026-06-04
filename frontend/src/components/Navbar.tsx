@@ -30,7 +30,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             }}
             className="flex items-center gap-3 hover:scale-105 transition"
           >
-            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-10 w-10" />
+            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-12 w-12" />
             <span className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
               Alvaeryn
             </span>
