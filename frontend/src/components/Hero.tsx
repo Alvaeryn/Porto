@@ -23,7 +23,7 @@ const Hero = () => {
       >
         {/* Logo */}
         <div className="mb-6">
-          <img src="/Logo.png" alt="Alvaeryn Logo" className="h-32 w-32 mx-auto rounded-full shadow-2xl mb-4" />
+          <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-32 w-32 mx-auto mb-4" />
         </div>
         
         {/* Badge */}
