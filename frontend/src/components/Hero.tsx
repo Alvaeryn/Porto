@@ -24,15 +24,15 @@ const Hero = () => {
         {/* Badge */}
         <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
           <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
-          <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Creative Full-Stack Developer & Designer</span>
+          <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Jasa Pembuatan Website & Aplikasi Profesional</span>
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-          Bangun <span className="bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">Presensi Digital</span> Yang Memukau
+          Bangun <span className="bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">Website & Aplikasi</span> Yang Memukau
         </h1>
 
         <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base max-w-2xl mx-auto mb-10">
-          Saya Alvaeryn, pengembang yang siap membantu kamu buat website & aplikasi mobile modern, cepat, dan mudah dipakai—biar bisnismu makin profesional dan mudah dikenali.
+          Alvaeryn siap membantu kamu buat website, landing page, dan aplikasi mobile modern—cepat, responsif, dan profesional!
         </p>
 
         {/* Buttons */}
