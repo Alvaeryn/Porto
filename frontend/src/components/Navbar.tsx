@@ -28,9 +28,12 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
               e.preventDefault();
               smoothScrollTo('#home');
             }}
-            className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent hover:scale-105 transition"
+            className="flex items-center gap-3 hover:scale-105 transition"
           >
-            Alvaeryn
+            <img src="/Logo.png" alt="Alvaeryn Logo" className="h-10 w-10 rounded-full" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
+              Alvaeryn
+            </span>
           </button>
 
           {/* Desktop Menu */}

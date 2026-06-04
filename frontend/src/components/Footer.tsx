@@ -20,8 +20,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent mb-3">
-              Alvaeryn
+            <div className="flex items-center gap-3 mb-3">
+              <img src="/Logo.png" alt="Alvaeryn Logo" className="h-8 w-8 rounded-full" />
+              <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
+                Alvaeryn
+              </div>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-600 mb-4">
               Solusi digital profesional untuk UMKM Indonesia

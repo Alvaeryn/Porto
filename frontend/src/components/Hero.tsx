@@ -21,6 +21,11 @@ const Hero = () => {
           transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
         }}
       >
+        {/* Logo */}
+        <div className="mb-6">
+          <img src="/Logo.png" alt="Alvaeryn Logo" className="h-32 w-32 mx-auto rounded-full shadow-2xl mb-4" />
+        </div>
+        
         {/* Badge */}
         <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
           <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
