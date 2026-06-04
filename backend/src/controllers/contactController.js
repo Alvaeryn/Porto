@@ -22,7 +22,14 @@ exports.submitContact = async (req, res) => {
 
     console.log('Contact saved to database:', { id: result.insertId, name, email });
 
-    // Send emails (non-blocking)
+    // Send response FIRST to frontend (non-blocking)
+    res.status(201).json({
+      status: 'success',
+      message: 'Pesan kamu berhasil dikirim! Saya akan segera menghubungi kamu.',
+      data: { id: result.insertId, name, email, whatsapp, service }
+    });
+
+    // Send emails in background (non-blocking)
     try {
       await emailService.sendContactNotification({ name, email, whatsapp, service, message });
       await emailService.sendThankYouEmail(email, name);
@@ -30,12 +37,6 @@ exports.submitContact = async (req, res) => {
     } catch (emailError) {
       console.error('Error sending emails (continuing anyway):', emailError.message);
     }
-
-    res.status(201).json({
-      status: 'success',
-      message: 'Pesan kamu berhasil dikirim! Saya akan segera menghubungi kamu.',
-      data: { id: result.insertId, name, email, whatsapp, service }
-    });
   } catch (error) {
     console.error('Error submitting contact:', error);
     res.status(500).json({

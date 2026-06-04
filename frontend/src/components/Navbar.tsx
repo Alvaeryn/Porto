@@ -13,6 +13,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
     { name: 'Home', id: '#home' },
     { name: 'Layanan', id: '#services' },
     { name: 'Portfolio', id: '#projects' },
+    { name: 'Tim', id: '#team' },
     { name: 'Testimoni', id: '#testimonials' },
     { name: 'Harga', id: '#pricing' },
   ];

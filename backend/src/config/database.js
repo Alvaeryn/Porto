@@ -7,7 +7,7 @@ if (process.env.DATABASE_URL) {
   // For Aiven/Railway/etc with connection URL
   pool = mysql.createPool({
     uri: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: true },
+    ssl: { rejectUnauthorized: false },
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0

@@ -1,22 +1,16 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
-// Create email transporter
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-  port: parseInt(process.env.EMAIL_PORT) || 587,
-  secure: process.env.EMAIL_SECURE === 'true',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+// Initialize Resend client
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Send notification email to admin
 exports.sendContactNotification = async (contactData) => {
   try {
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
+    const adminEmail = process.env.ADMIN_EMAIL || 'vaerann@gmail.com';
+    
+    await resend.emails.send({
+      from: 'Portfolio <onboarding@resend.dev>',
+      to: adminEmail,
       subject: `Pesan Baru dari Portfolio - ${contactData.name}`,
       html: `
         <h2>Pesan Baru dari Portfolio</h2>
@@ -27,9 +21,8 @@ exports.sendContactNotification = async (contactData) => {
         <p><strong>Pesan:</strong></p>
         <p>${contactData.message}</p>
       `
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
+    
     console.log('Notification email sent');
     return true;
   } catch (error) {
@@ -41,8 +34,8 @@ exports.sendContactNotification = async (contactData) => {
 // Send thank you email to user
 exports.sendThankYouEmail = async (userEmail, userName) => {
   try {
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'Alvaeryn Portfolio <onboarding@resend.dev>',
       to: userEmail,
       subject: 'Terima Kasih Telah Menghubungi Kami',
       html: `
@@ -51,9 +44,8 @@ exports.sendThankYouEmail = async (userEmail, userName) => {
         <p>Saya akan segera menghubungi Anda kembali secepatnya.</p>
         <p>Salam hangat,<br>Alvaeryn</p>
       `
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
+    
     console.log('Thank you email sent');
     return true;
   } catch (error) {
