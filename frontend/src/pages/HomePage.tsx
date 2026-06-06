@@ -4,6 +4,7 @@ import Projects from '../components/sections/Projects';
 import Team from '../components/sections/Team';
 import Testimonials from '../components/sections/Testimonials';
 import Pricing from '../components/sections/Pricing';
+import GitHubProjects from '../components/sections/GitHubProjects';
 import Contact from '../components/sections/Contact';
 
 const HomePage = () => (
@@ -14,6 +15,7 @@ const HomePage = () => (
     <Team />
     <Testimonials />
     <Pricing />
+    <GitHubProjects />
     <Contact />
   </>
 );

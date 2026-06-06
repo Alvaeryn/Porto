@@ -4,81 +4,59 @@ import { useScrollFade } from '../../hooks/useScrollFade';
 interface Project {
   title: string;
   category: string;
-  problem: string;
-  solution: string;
-  result: string;
+  description: string;
   tech: string[];
-  icon: string;
+  image: string;
+  link?: string;
 }
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
-  const { ref, isVisible } = useScrollAnimation(0.3);
+  const { ref, isVisible } = useScrollAnimation(0.1);
   
-  const animationClass = index % 2 === 0 ? 'animate-fade-left' : 'animate-fade-right';
+  const animationClass = ['animate-fade-up', 'animate-rotate', 'animate-scale-up'][index % 3];
   
   return (
     <div 
       ref={ref}
-      className={`bg-white dark:bg-slate-950 p-8 md:p-12 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 animate-on-scroll ${animationClass} ${isVisible ? 'visible' : ''}`}
+      className={`bg-white dark:bg-slate-950 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 overflow-hidden group hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 animate-on-scroll ${animationClass} ${isVisible ? 'visible' : ''}`}
     >
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex-1">
-          <span className="inline-block text-cyan-600 dark:text-cyan-400 font-semibold mb-2">{project.category}</span>
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">{project.title}</h3>
-          
-          <div className="space-y-4 mb-6">
-            <div>
-              <h4 className="font-semibold text-slate-800 dark:text-slate-200 flex items-center mb-1">
-                <span className="text-orange-500 mr-2">🎯</span> Masalah
-              </h4>
-              <p className="text-slate-600 dark:text-slate-400">{project.problem}</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-slate-800 dark:text-slate-200 flex items-center mb-1">
-                <span className="text-cyan-500 mr-2">💡</span> Solusi
-              </h4>
-              <p className="text-slate-600 dark:text-slate-400">{project.solution}</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-slate-800 dark:text-slate-200 flex items-center mb-1">
-                <span className="text-green-500 mr-2">📊</span> Hasil
-              </h4>
-              <p className="text-green-700 dark:text-green-400 font-semibold">{project.result}</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap gap-3 items-center">
-            {project.tech.map((t, j) => {
-              const iconMap: Record<string, string> = {
-                'React': 'devicon-react-original colored',
-                'Next.js': 'devicon-nextjs-original colored',
-                'TypeScript': 'devicon-typescript-plain colored',
-                'Tailwind': 'devicon-tailwindcss-original colored',
-                'Node.js': 'devicon-nodejs-plain colored',
-                'Express': 'devicon-express-original colored',
-                'MySQL': 'devicon-mysql-original colored',
-                'JavaScript': 'devicon-javascript-plain colored',
-                'PHP': 'devicon-php-plain colored',
-                'Laravel': 'devicon-laravel-plain colored',
-                'React Native': 'devicon-react-original colored',
-                'Flutter': 'devicon-flutter-plain colored',
-                'Firebase': 'devicon-firebase-plain colored',
-                'Figma': 'devicon-figma-plain colored',
-                'D3.js': 'devicon-d3js-original colored',
-              };
-              return (
-                <span key={j} className="px-3 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-medium flex items-center gap-2">
-                  <i className={iconMap[t] || ''} style={{ fontSize: '1.25rem' }}></i>
-                  {t}
-                </span>
-              );
-            })}
-          </div>
+      <div className="relative h-48 overflow-hidden">
+        <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-cyan-600 text-white rounded-full text-sm font-semibold hover:bg-cyan-700 transition-colors">
+              Lihat Proyek
+            </a>
+          )}
         </div>
-        <div className="w-full md:w-1/3 flex items-center justify-center">
-          <div className="w-full h-48 bg-gradient-to-br from-cyan-200 to-teal-200 dark:from-cyan-900/50 dark:to-teal-900/50 rounded-xl flex items-center justify-center text-6xl">
-            {project.icon}
-          </div>
+      </div>
+      <div className="p-6">
+        <span className="inline-block text-cyan-600 dark:text-cyan-400 text-xs font-semibold uppercase tracking-wide mb-2">{project.category}</span>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
+        <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">{project.description}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.tech.map((t, j) => {
+            const iconMap: Record<string, string> = {
+              'React': 'devicon-react-original colored',
+              'Next.js': 'devicon-nextjs-original colored',
+              'TypeScript': 'devicon-typescript-plain colored',
+              'Tailwind': 'devicon-tailwindcss-original colored',
+              'Node.js': 'devicon-nodejs-plain colored',
+              'Express': 'devicon-express-original colored',
+              'MySQL': 'devicon-mysql-original colored',
+              'JavaScript': 'devicon-javascript-plain colored',
+              'PHP': 'devicon-php-plain colored',
+              'Laravel': 'devicon-laravel-plain colored',
+              'Flutter': 'devicon-flutter-plain colored',
+              'Figma': 'devicon-figma-plain colored',
+            };
+            return (
+              <span key={j} className="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium flex items-center gap-1">
+                <i className={iconMap[t] || ''} style={{ fontSize: '0.875rem' }}></i>
+                {t}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -90,38 +68,30 @@ const Projects = () => {
     {
       title: 'Travel App',
       category: 'Full-Stack Web',
-      problem: 'Butuh platform travel yang modern dan mudah digunakan.',
-      solution: 'Membuat aplikasi travel dengan Next.js, React, TypeScript, Tailwind, Node.js, Express, dan MySQL.',
-      result: 'Pengalaman booking jadi lebih cepat dan nyaman.',
+      description: 'Platform travel untuk booking tiket dan hotel dengan antarmuka yang modern dan user-friendly.',
       tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MySQL'],
-      icon: '✈️'
+      image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800',
     },
     {
       title: 'Sistem Manajemen Sekolah',
       category: 'Full-Stack Web',
-      problem: 'Sekolah butuh sistem untuk manajemen siswa dan nilai.',
-      solution: 'Membuat web app dengan Laravel dan MySQL.',
-      result: 'Proses manajemen jadi lebih cepat dan terstruktur.',
+      description: 'Sistem informasi sekolah untuk manajemen data siswa, guru, dan nilai secara terintegrasi.',
       tech: ['PHP', 'Laravel', 'JavaScript'],
-      icon: '🏫'
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?auto=format&fit=crop&q=80&w=800',
     },
     {
       title: 'Absensi Siswa Berbasis QRCODE',
       category: 'Full-Stack Web',
-      problem: 'Proses absensi manual memakan waktu dan rawan kesalahan.',
-      solution: 'Sistem absensi dengan QRCODE menggunakan React, Express, dan MySQL.',
-      result: 'Absensi jadi lebih cepat, akurat, dan tercatat otomatis.',
+      description: 'Aplikasi absensi otomatis dengan scan QRCODE untuk mempercepat dan memudahkan proses absensi.',
       tech: ['React', 'Express', 'MySQL'],
-      icon: '📱'
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
     },
     {
       title: 'Dashboard Analytics',
       category: 'UI/UX Design',
-      problem: 'Butuh dashboard untuk monitoring data.',
-      solution: 'Desain dan develop dashboard dengan chart interaktif.',
-      result: 'Pengambilan keputusan lebih cepat dan akurat.',
-      tech: ['Figma', 'React', 'D3.js'],
-      icon: '📊'
+      description: 'Dashboard interaktif untuk monitoring dan visualisasi data dengan chart yang informatif.',
+      tech: ['Figma', 'React', 'Tailwind'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     }
   ];
 
@@ -140,11 +110,12 @@ const Projects = () => {
         }}
       >
         <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-scale-up ${headerVisible ? 'visible' : ''}`}>
-          <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Studi Kasus Proyek Terbaru</h2>
+          <span className="inline-block px-4 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold uppercase tracking-wide mb-3">Portfolio</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-3">Proyek Terbaru Saya</h2>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kumpulan proyek yang telah saya kerjakan dengan penuh dedikasi</p>
         </div>
         
-        <div className="space-y-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} />
           ))}
@@ -155,4 +126,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
