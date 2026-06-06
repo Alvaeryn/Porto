@@ -5,8 +5,7 @@ interface TeamMember {
   name: string;
   role: string;
   bio: string;
-  avatar: string;
-  color: string;
+  image: string;
 }
 
 const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }) => {
@@ -20,8 +19,8 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       ref={ref}
       className={`bg-white dark:bg-slate-950 p-8 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800 text-center hover:-translate-y-2 transition-all duration-300 animate-on-scroll ${animationClass} ${isVisible ? 'visible' : ''}`}
     >
-      <div className={`w-28 h-28 mx-auto mb-6 bg-gradient-to-br ${member.color} rounded-full flex items-center justify-center text-4xl font-bold text-white`}>
-        {member.avatar}
+      <div className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden border-4 border-slate-200 dark:border-slate-700">
+        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
       </div>
       <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-2">{member.name}</h3>
       <p className="text-cyan-600 dark:text-cyan-400 font-semibold text-sm mb-4">{member.role}</p>
@@ -33,25 +32,22 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 const Team = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: 'Alvaeryn',
-      role: 'Founder & Full Stack Developer',
-      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 2 tahun.',
-      avatar: 'A',
-      color: 'from-cyan-500 to-teal-500'
+      name: 'Revalin Amalia',
+      role: 'UI/UX Designer',
+      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
+      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007286366066024/image_2024-07-06_152747628-Photoroom2.png?ex=66824900&is=6680f780&hm=b323a625c8d8b9d7b714065052329c57937a7964873203a695d7a263e23e750b&'
     },
     {
       name: 'Carisa Rahmanda R',
       role: 'Mobile App Developer',
       bio: 'Spesialis dalam pengembangan aplikasi mobile yang kreatif dan responsif.',
-      avatar: 'C',
-      color: 'from-pink-500 to-purple-500'
+      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007374600822844/image_2024-07-06_152922600-Photoroom.png?ex=66824915&is=6680f795&hm=b85b6009c6b038d4275fec704615b786b855c6c9a673672b684703880d849315&'
     },
     {
-      name: 'Revalin Amalia',
-      role: 'UI/UX Designer',
-      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
-      avatar: 'R',
-      color: 'from-blue-500 to-indigo-500'
+      name: 'Alvaeryn',
+      role: 'Founder & Full Stack Developer',
+      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 2 tahun.',
+      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007416144814157/image_2024-07-06_153030401-Photoroom.png?ex=6682491f&is=6680f79f&hm=104022d6b06fa40c1b212c0655e843423bd0b7c315875b4a9febf34d4762b5b0&'
     }
   ];
 
