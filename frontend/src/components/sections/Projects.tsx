@@ -52,6 +52,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 'React': 'devicon-react-original colored',
                 'Tailwind': 'devicon-tailwindcss-original colored',
                 'Node.js': 'devicon-nodejs-plain colored',
+                'Express': 'devicon-express-original colored',
+                'MySQL': 'devicon-mysql-original colored',
                 'JavaScript': 'devicon-javascript-plain colored',
                 'PHP': 'devicon-php-plain colored',
                 'Laravel': 'devicon-laravel-plain colored',
@@ -91,14 +93,6 @@ const Projects = () => {
       tech: ['React', 'Tailwind', 'JavaScript']
     },
     {
-      title: 'Aplikasi Kasir UMKM',
-      category: 'Mobile App',
-      problem: 'UMKM butuh aplikasi kasir yang ringkas dan mudah dipakai.',
-      solution: 'Aplikasi mobile dengan Flutter yang bisa bekerja offline.',
-      result: 'Transaksi jadi lebih tercatat, laporan otomatis.',
-      tech: ['Flutter', 'Firebase']
-    },
-    {
       title: 'Sistem Manajemen Sekolah',
       category: 'Full-Stack Web',
       problem: 'Sekolah butuh sistem untuk manajemen siswa dan nilai.',
@@ -107,12 +101,12 @@ const Projects = () => {
       tech: ['PHP', 'Laravel', 'JavaScript']
     },
     {
-      title: 'Aplikasi Booking Klinik',
-      category: 'Mobile App',
-      problem: 'Klinik butuh sistem booking yang mudah.',
-      solution: 'Aplikasi mobile dengan React Native untuk booking.',
-      result: 'Booking online naik 50%, antrian berkurang.',
-      tech: ['React Native', 'Firebase']
+      title: 'Absensi Siswa Berbasis QRCODE',
+      category: 'Full-Stack Web',
+      problem: 'Proses absensi manual memakan waktu dan rawan kesalahan.',
+      solution: 'Sistem absensi dengan QRCODE menggunakan React, Express, dan MySQL.',
+      result: 'Absensi jadi lebih cepat, akurat, dan tercatat otomatis.',
+      tech: ['React', 'Express', 'MySQL']
     },
     {
       title: 'Dashboard Analytics',
