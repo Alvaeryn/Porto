@@ -35,7 +35,7 @@ const Team = () => {
     {
       name: 'Alvaeryn',
       role: 'Founder & Full Stack Developer',
-      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 5 tahun, bisa semua kecuali UI/UX.',
+      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 2 tahun.',
       avatar: 'A',
       color: 'from-cyan-500 to-teal-500'
     },
