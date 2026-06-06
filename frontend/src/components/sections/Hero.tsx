@@ -79,6 +79,7 @@ const Hero = () => {
             { name: 'Flutter', icon: 'devicon-flutter-plain colored' },
             { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
             { name: 'Express', icon: 'devicon-express-original colored' },
+            { name: 'MySQL', icon: 'devicon-mysql-original colored' },
             { name: 'PHP', icon: 'devicon-php-plain colored' },
             { name: 'Laravel', icon: 'devicon-laravel-plain colored' },
             { name: 'Tailwind', icon: 'devicon-tailwindcss-original colored' },
