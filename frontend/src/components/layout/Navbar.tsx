@@ -37,9 +37,9 @@ const Navbar = ({ currentPath }: NavbarProps) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-3 pt-3">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center rounded-full bg-white/92 dark:bg-slate-900/92 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80 shadow-sm px-5 md:px-7 py-3">
+        <div className="flex justify-between items-center rounded-full bg-white/92 dark:bg-slate-900/92 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80 shadow-sm px-3 md:px-7 py-2 md:py-3">
           {/* Logo */}
           <button
             onClick={(e) => {
@@ -53,10 +53,10 @@ const Navbar = ({ currentPath }: NavbarProps) => {
 
               navigateToSection('#home');
             }}
-            className="flex items-center gap-3 hover:scale-105 transition"
+            className="flex items-center gap-2 hover:scale-105 transition"
           >
-            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-12 w-12 md:h-14 md:w-14" />
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
+            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-10 w-10 md:h-14 md:w-14" />
+            <span className="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
               Alvaeryn
             </span>
           </button>
@@ -130,8 +130,8 @@ const Navbar = ({ currentPath }: NavbarProps) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-800">
-            <div className="flex flex-col gap-4 items-center">
+          <div className="md:hidden mt-3 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg overflow-hidden">
+            <div className="flex flex-col gap-3 items-center py-4">
               {menuItems.map((item) => (
                 <button
                   key={item.name}
