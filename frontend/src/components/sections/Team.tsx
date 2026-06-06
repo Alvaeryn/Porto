@@ -35,21 +35,21 @@ const Team = () => {
     {
       name: 'Alvaeryn',
       role: 'Founder & Full Stack Developer',
-      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 5 tahun.',
+      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 5 tahun, bisa semua kecuali UI/UX.',
       avatar: 'A',
       color: 'from-cyan-500 to-teal-500'
     },
     {
       name: 'Carisa Rahmanda R',
-      role: 'UI/UX Designer',
-      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
+      role: 'Mobile App Developer',
+      bio: 'Spesialis dalam pengembangan aplikasi mobile yang kreatif dan responsif.',
       avatar: 'C',
       color: 'from-pink-500 to-purple-500'
     },
     {
       name: 'Revalin Amalia',
-      role: 'Backend Developer',
-      bio: 'Ahli dalam arsitektur server dan database yang scalable dan aman.',
+      role: 'UI/UX Designer',
+      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
       avatar: 'R',
       color: 'from-blue-500 to-indigo-500'
     }
