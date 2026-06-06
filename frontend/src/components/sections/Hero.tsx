@@ -74,6 +74,7 @@ const Hero = () => {
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {[
             { name: 'React', icon: 'devicon-react-original colored' },
+            { name: 'Next.js', icon: 'devicon-nextjs-original colored' },
             { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
             { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
             { name: 'Flutter', icon: 'devicon-flutter-plain colored' },
