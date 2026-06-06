@@ -1,5 +1,5 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
 
 interface Package {
   name: string;
@@ -99,3 +99,4 @@ const Pricing = () => {
 };
 
 export default Pricing;
+

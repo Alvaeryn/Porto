@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { navigateTo, navigateToSection } from '../utils/navigation';
+import { navigateTo, navigateToSection } from '../../utils/navigation';
+import { useThemeStore } from '../../store/themeStore';
+import { useUIStore } from '../../store/uiStore';
 
 interface NavbarProps {
-  darkMode: boolean;
-  setDarkMode: (value: boolean) => void;
   currentPath: string;
 }
 
@@ -13,8 +12,9 @@ interface MenuItem {
   target: string;
 }
 
-const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const Navbar = ({ currentPath }: NavbarProps) => {
+  const { darkMode, toggleDarkMode } = useThemeStore();
+  const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useUIStore();
 
   const menuItems: MenuItem[] = [
     { name: 'Home', type: 'section', target: '#home' },
@@ -33,7 +33,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
       navigateToSection(target);
     }
 
-    setMobileMenuOpen(false);
+    closeMobileMenu();
   };
 
   return (
@@ -47,7 +47,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
               if (currentPath === '/faq') {
                 navigateTo('/');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                setMobileMenuOpen(false);
+                closeMobileMenu();
                 return;
               }
 
@@ -90,7 +90,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
             </button>
             {/* Dark Mode Toggle */}
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={toggleDarkMode}
               className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
               aria-label="Toggle dark mode"
             >
@@ -101,7 +101,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
           >
             <svg
               className="w-6 h-6 text-slate-700 dark:text-white"
@@ -109,7 +109,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              {mobileMenuOpen ? (
+              {isMobileMenuOpen ? (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -129,7 +129,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
+        {isMobileMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t border-slate-200 dark:border-slate-800">
             <div className="flex flex-col gap-4 items-center">
               {menuItems.map((item) => (
@@ -149,7 +149,7 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
               ))}
               <div className="flex flex-col gap-4 items-center w-full pt-4 border-t border-slate-200 dark:border-slate-800">
                 <button
-                  onClick={() => setDarkMode(!darkMode)}
+                  onClick={toggleDarkMode}
                   className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
                   aria-label="Toggle dark mode"
                 >
@@ -173,3 +173,4 @@ const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
 };
 
 export default Navbar;
+

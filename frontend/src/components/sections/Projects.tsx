@@ -1,5 +1,5 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
 
 interface Project {
   title: string;
@@ -154,3 +154,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

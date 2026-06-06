@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useUIStore } from '../../store/uiStore';
 
 const WhatsAppPopup = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isWhatsAppOpen, toggleWhatsAppOpen, closeWhatsAppOpen } = useUIStore();
 
   const whatsappNumber = '628818411915';
   
@@ -15,14 +15,14 @@ const WhatsAppPopup = () => {
   const handleCategoryClick = (message: string) => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
-    setIsOpen(false);
+    closeWhatsAppOpen();
   };
 
   return (
     <div className="fixed bottom-8 right-8 z-50">
       {/* WhatsApp Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleWhatsAppOpen}
         className="w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl"
       >
         <svg 
@@ -35,7 +35,7 @@ const WhatsAppPopup = () => {
       </button>
 
       {/* Popup */}
-      {isOpen && (
+      {isWhatsAppOpen && (
         <div className="absolute bottom-20 right-0 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
           <div className="bg-gradient-to-r from-green-500 to-green-600 px-5 py-4 flex items-center justify-between">
@@ -55,7 +55,7 @@ const WhatsAppPopup = () => {
               </div>
             </div>
             <button 
-              onClick={() => setIsOpen(false)}
+              onClick={closeWhatsAppOpen}
               className="text-white/80 hover:text-white transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

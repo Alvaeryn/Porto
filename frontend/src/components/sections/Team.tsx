@@ -1,5 +1,5 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
 
 interface TeamMember {
   name: string;
@@ -124,3 +124,4 @@ const Team = () => {
 };
 
 export default Team;
+

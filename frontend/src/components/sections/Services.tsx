@@ -1,5 +1,5 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
 
 interface Service {
   icon: string;
@@ -104,3 +104,4 @@ const Services = () => {
 };
 
 export default Services;
+

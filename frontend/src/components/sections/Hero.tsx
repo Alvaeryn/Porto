@@ -1,5 +1,5 @@
-import { useScrollFade } from '../hooks/useScrollFade';
-import { smoothScrollTo } from '../utils/scroll';
+import { useScrollFade } from '../../hooks/useScrollFade';
+import { smoothScrollTo } from '../../utils/scroll';
 
 const Hero = () => {
   const { ref, opacity, scale } = useScrollFade();
@@ -102,3 +102,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

@@ -1,46 +1,16 @@
-import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import Team from './components/Team';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import FAQPage from './components/FAQPage';
-import WhatsAppPopup from './components/WhatsAppPopup';
-import { getLocationState } from './utils/navigation';
+import { useEffect, useState } from 'react';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import WhatsAppPopup from './components/common/WhatsAppPopup';
+import AppRoutes from './routes/AppRoutes';
+import { useLocationStore } from './store/locationStore';
+import { useThemeStore } from './store/themeStore';
 import { smoothScrollTo } from './utils/scroll';
 
-const HomePage = () => (
-  <>
-    <Hero />
-    <Services />
-    <Projects />
-    <Team />
-    <Testimonials />
-    <Pricing />
-    <Contact />
-  </>
-);
-
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
-  });
+  const { darkMode } = useThemeStore();
+  const location = useLocationStore();
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [location, setLocation] = useState(getLocationState);
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,15 +18,6 @@ function App() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setLocation(getLocationState());
-    };
-
-    window.addEventListener('popstate', handleLocationChange);
-    return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
 
   useEffect(() => {
@@ -80,12 +41,10 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const isFaqPage = location.pathname === '/faq';
-
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} currentPath={location.pathname} />
-      {isFaqPage ? <FAQPage darkMode={darkMode} /> : <HomePage />}
+      <Navbar />
+      <AppRoutes darkMode={darkMode} />
       <Footer />
       
       {/* Floating Buttons */}

@@ -1,4 +1,4 @@
-import { navigateTo, navigateToSection } from '../utils/navigation';
+import { navigateTo, navigateToSection } from '../../utils/navigation';
 
 interface MenuItem {
   name: string;
@@ -99,3 +99,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const About = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.1);
@@ -35,3 +35,4 @@ const About = () => {
 };
 
 export default About;
+

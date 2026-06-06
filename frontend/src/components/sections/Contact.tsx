@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
-import { API_ENDPOINTS } from '../config/api';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
+import { API_ENDPOINTS } from '../../config/api';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -242,3 +242,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

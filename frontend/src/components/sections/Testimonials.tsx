@@ -1,5 +1,5 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useScrollFade } from '../hooks/useScrollFade';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollFade } from '../../hooks/useScrollFade';
 
 interface Testimonial {
   name: string;
@@ -83,3 +83,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
