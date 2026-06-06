@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <Navbar />
+      <Navbar currentPath={location.pathname} />
       <AppRoutes darkMode={darkMode} />
       <Footer />
       
