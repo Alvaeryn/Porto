@@ -32,22 +32,22 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 const Team = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: 'Revalin Amalia',
-      role: 'UI/UX Designer',
-      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
-      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007286366066024/image_2024-07-06_152747628-Photoroom2.png?ex=66824900&is=6680f780&hm=b323a625c8d8b9d7b714065052329c57937a7964873203a695d7a263e23e750b&'
+      name: 'Alvaeryn',
+      role: 'Founder & Full Stack Developer',
+      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 2 tahun.',
+      image: '/founder.jpeg'
     },
     {
       name: 'Carisa Rahmanda R',
       role: 'Mobile App Developer',
       bio: 'Spesialis dalam pengembangan aplikasi mobile yang kreatif dan responsif.',
-      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007374600822844/image_2024-07-06_152922600-Photoroom.png?ex=66824915&is=6680f795&hm=b85b6009c6b038d4275fec704615b786b855c6c9a673672b684703880d849315&'
+      image: '/carisa.jpeg'
     },
     {
-      name: 'Alvaeryn',
-      role: 'Founder & Full Stack Developer',
-      bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 2 tahun.',
-      image: 'https://cdn.discordapp.com/attachments/1259007175908483138/1259007416144814157/image_2024-07-06_153030401-Photoroom.png?ex=6682491f&is=6680f79f&hm=104022d6b06fa40c1b212c0655e843423bd0b7c315875b4a9febf34d4762b5b0&'
+      name: 'Revalin Amalia',
+      role: 'UI/UX Designer',
+      bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
+      image: '/revalin.jpeg'
     }
   ];
 
