@@ -7,13 +7,12 @@ interface TeamMember {
   bio: string;
   avatar: string;
   color: string;
-  socials: { icon: string; link: string }[];
 }
 
 const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }) => {
   const { ref, isVisible } = useScrollAnimation(0.3);
   
-  const animations = ['animate-fade-up', 'animate-rotate', 'animate-scale-up', 'animate-slide-up-bounce'];
+  const animations = ['animate-fade-up', 'animate-rotate', 'animate-scale-up'];
   const animationClass = animations[index % animations.length];
   
   return (
@@ -26,18 +25,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
       </div>
       <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-2">{member.name}</h3>
       <p className="text-cyan-600 dark:text-cyan-400 font-semibold text-sm mb-4">{member.role}</p>
-      <p className="text-slate-600 dark:text-slate-400 text-sm mb-6">{member.bio}</p>
-      <div className="flex justify-center gap-4">
-        {member.socials.map((social, j) => (
-          <a 
-            key={j} 
-            href={social.link}
-            className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-cyan-500 hover:text-white transition-all"
-          >
-            <i className={social.icon}></i>
-          </a>
-        ))}
-      </div>
+      <p className="text-slate-600 dark:text-slate-400 text-sm">{member.bio}</p>
     </div>
   );
 };
@@ -49,48 +37,21 @@ const Team = () => {
       role: 'Founder & Full Stack Developer',
       bio: 'Spesialis dalam pengembangan web dan aplikasi mobile dengan pengalaman lebih dari 5 tahun.',
       avatar: 'A',
-      color: 'from-cyan-500 to-teal-500',
-      socials: [
-        { icon: 'fab fa-github', link: '#' },
-        { icon: 'fab fa-linkedin', link: '#' },
-        { icon: 'fab fa-instagram', link: '#' }
-      ]
+      color: 'from-cyan-500 to-teal-500'
     },
     {
-      name: 'Sarah Chen',
+      name: 'Carisa Rahmanda R',
       role: 'UI/UX Designer',
       bio: 'Desainer kreatif yang fokus pada pengalaman pengguna yang intuitif dan menarik.',
-      avatar: 'S',
-      color: 'from-pink-500 to-purple-500',
-      socials: [
-        { icon: 'fab fa-github', link: '#' },
-        { icon: 'fab fa-dribbble', link: '#' },
-        { icon: 'fab fa-behance', link: '#' }
-      ]
+      avatar: 'C',
+      color: 'from-pink-500 to-purple-500'
     },
     {
-      name: 'Rizky Ramadhan',
+      name: 'Revalin Amalia',
       role: 'Backend Developer',
       bio: 'Ahli dalam arsitektur server dan database yang scalable dan aman.',
       avatar: 'R',
-      color: 'from-blue-500 to-indigo-500',
-      socials: [
-        { icon: 'fab fa-github', link: '#' },
-        { icon: 'fab fa-linkedin', link: '#' },
-        { icon: 'fab fa-twitter', link: '#' }
-      ]
-    },
-    {
-      name: 'Dewi Lestari',
-      role: 'Mobile Developer',
-      bio: 'Spesialis Flutter yang membuat aplikasi mobile performa tinggi untuk iOS dan Android.',
-      avatar: 'D',
-      color: 'from-orange-500 to-red-500',
-      socials: [
-        { icon: 'fab fa-github', link: '#' },
-        { icon: 'fab fa-linkedin', link: '#' },
-        { icon: 'fab fa-instagram', link: '#' }
-      ]
+      color: 'from-blue-500 to-indigo-500'
     }
   ];
 
@@ -113,7 +74,7 @@ const Team = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Orang-Orang Hebat di Balik Layar</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, i) => (
             <TeamMemberCard key={i} member={member} index={i} />
           ))}
