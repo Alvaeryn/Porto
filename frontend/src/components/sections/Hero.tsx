@@ -83,9 +83,9 @@ const Hero = () => {
             { name: 'Tailwind', icon: 'devicon-tailwindcss-original colored' },
             { name: 'Figma', icon: 'devicon-figma-plain colored' },
           ].map((tech, i) => (
-            <div key={i} className="flex items-center gap-3 hover:-translate-y-1 transition-all">
-              <i className={tech.icon} style={{ fontSize: '1.75rem' }}></i>
-              <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg">{tech.name}</span>
+            <div key={i} className="flex items-center gap-3 hover:-translate-y-1 transition-all cursor-pointer group">
+              <i className={`${tech.icon} grayscale group-hover:grayscale-0 transition-filter duration-300`} style={{ fontSize: '1.75rem' }}></i>
+              <span className="font-semibold text-slate-700 dark:text-slate-300 text-lg group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{tech.name}</span>
             </div>
           ))}
         </div>
