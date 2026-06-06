@@ -39,8 +39,8 @@ const Team = () => {
     },
     {
       name: 'Carisa Rahmanda R',
-      role: 'Mobile App Developer',
-      bio: 'Spesialis dalam pengembangan aplikasi mobile yang kreatif dan responsif.',
+      role: 'Mobile App & UI/UX Developer',
+      bio: 'Spesialis dalam pengembangan aplikasi mobile dan desain UI/UX yang kreatif dan responsif.',
       image: '/carisa.jpeg'
     },
     {
