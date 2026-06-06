@@ -8,7 +8,22 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FAQPage from './components/FAQPage';
 import WhatsAppPopup from './components/WhatsAppPopup';
+import { getLocationState } from './utils/navigation';
+import { smoothScrollTo } from './utils/scroll';
+
+const HomePage = () => (
+  <>
+    <Hero />
+    <Services />
+    <Projects />
+    <Team />
+    <Testimonials />
+    <Pricing />
+    <Contact />
+  </>
+);
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -16,6 +31,7 @@ function App() {
     return saved ? JSON.parse(saved) : false;
   });
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [location, setLocation] = useState(getLocationState);
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -34,20 +50,42 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setLocation(getLocationState());
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  useEffect(() => {
+    if (location.pathname === '/faq') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (!location.hash) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      smoothScrollTo(location.hash);
+    }, 80);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const isFaqPage = location.pathname === '/faq';
+
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero />
-      <Services />
-      <Projects />
-      <Team />
-      <Testimonials />
-      <Pricing />
-      <Contact />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} currentPath={location.pathname} />
+      {isFaqPage ? <FAQPage darkMode={darkMode} /> : <HomePage />}
       <Footer />
       
       {/* Floating Buttons */}

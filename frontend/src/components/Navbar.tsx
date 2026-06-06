@@ -1,51 +1,80 @@
 import { useState } from 'react';
-import { smoothScrollTo } from '../utils/scroll';
+import { navigateTo, navigateToSection } from '../utils/navigation';
 
 interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (value: boolean) => void;
+  currentPath: string;
 }
 
-const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
+interface MenuItem {
+  name: string;
+  type: 'section' | 'page';
+  target: string;
+}
+
+const Navbar = ({ darkMode, setDarkMode, currentPath }: NavbarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const menuItems = [
-    { name: 'Home', id: '#home' },
-    { name: 'Layanan', id: '#services' },
-    { name: 'Portfolio', id: '#projects' },
-    { name: 'Tim', id: '#team' },
-    { name: 'Testimoni', id: '#testimonials' },
-    { name: 'Harga', id: '#pricing' },
+  const menuItems: MenuItem[] = [
+    { name: 'Home', type: 'section', target: '#home' },
+    { name: 'Layanan', type: 'section', target: '#services' },
+    { name: 'Portfolio', type: 'section', target: '#projects' },
+    { name: 'Testimoni', type: 'section', target: '#testimonials' },
+    { name: 'Harga', type: 'section', target: '#pricing' },
+    { name: 'FAQ', type: 'page', target: '/faq' },
   ];
 
+  const handleMenuClick = (type: 'section' | 'page', target: string) => {
+    if (type === 'page') {
+      navigateTo(target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigateToSection(target);
+    }
+
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center rounded-full bg-white/92 dark:bg-slate-900/92 backdrop-blur-lg border border-slate-200/80 dark:border-slate-800/80 shadow-sm px-5 md:px-7 py-3">
           {/* Logo */}
           <button
             onClick={(e) => {
               e.preventDefault();
-              smoothScrollTo('#home');
+              if (currentPath === '/faq') {
+                navigateTo('/');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setMobileMenuOpen(false);
+                return;
+              }
+
+              navigateToSection('#home');
             }}
             className="flex items-center gap-3 hover:scale-105 transition"
           >
-            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-16 w-16" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
+            <img src="/Final-Logo.png" alt="Alvaeryn Logo" className="h-12 w-12 md:h-14 md:w-14" />
+            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-600 to-teal-500 bg-clip-text text-transparent">
               Alvaeryn
             </span>
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-5 lg:gap-6">
             {menuItems.map((item) => (
               <button
                 key={item.name}
                 onClick={(e) => {
                   e.preventDefault();
-                  smoothScrollTo(item.id);
+                  handleMenuClick(item.type, item.target);
                 }}
-                className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition"
+                className={`text-sm font-medium transition ${
+                  currentPath === item.target
+                    ? 'text-cyan-600 dark:text-cyan-400'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400'
+                }`}
               >
                 {item.name}
               </button>
@@ -53,9 +82,9 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                smoothScrollTo('#contact');
+                handleMenuClick('section', '#contact');
               }}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-600 to-teal-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all"
+              className="ml-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-teal-500 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all"
             >
               Konsultasi Gratis
             </button>
@@ -107,10 +136,13 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 <button
                   key={item.name}
                   onClick={() => {
-                    setMobileMenuOpen(false);
-                    smoothScrollTo(item.id);
+                    handleMenuClick(item.type, item.target);
                   }}
-                  className="text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium py-2 transition text-xl"
+                  className={`font-medium py-2 transition text-xl ${
+                    currentPath === item.target
+                      ? 'text-cyan-600 dark:text-cyan-400'
+                      : 'text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400'
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -125,8 +157,7 @@ const Navbar = ({ darkMode, setDarkMode }: NavbarProps) => {
                 </button>
                 <button
                   onClick={() => {
-                    setMobileMenuOpen(false);
-                    smoothScrollTo('#contact');
+                    handleMenuClick('section', '#contact');
                   }}
                   className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-teal-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all text-lg"
                 >

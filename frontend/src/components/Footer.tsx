@@ -1,10 +1,19 @@
+import { navigateTo, navigateToSection } from '../utils/navigation';
+
+interface MenuItem {
+  name: string;
+  type: 'section' | 'page';
+  target: string;
+}
+
 const Footer = () => {
-  const menuItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Layanan', href: '#services' },
-    { name: 'Portfolio', href: '#projects' },
-    { name: 'Testimoni', href: '#testimonials' },
-    { name: 'Harga', href: '#pricing' },
+  const menuItems: MenuItem[] = [
+    { name: 'Home', type: 'section', target: '#home' },
+    { name: 'Layanan', type: 'section', target: '#services' },
+    { name: 'Portfolio', type: 'section', target: '#projects' },
+    { name: 'Testimoni', type: 'section', target: '#testimonials' },
+    { name: 'Harga', type: 'section', target: '#pricing' },
+    { name: 'FAQ', type: 'page', target: '/faq' },
   ];
 
   const contactItems = [
@@ -13,6 +22,16 @@ const Footer = () => {
     { name: 'Telegram', href: 'https://t.me/alvaeryn' },
     { name: 'GitHub', href: 'https://github.com' },
   ];
+
+  const handleMenuClick = (type: 'section' | 'page', target: string) => {
+    if (type === 'page') {
+      navigateTo(target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    navigateToSection(target);
+  };
 
   return (
     <footer className="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-400 py-12 border-t border-slate-200 dark:border-slate-900">
@@ -39,9 +58,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {menuItems.map((item, i) => (
                 <li key={i}>
-                  <a href={item.href} className="text-xs text-slate-600 dark:text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition">
+                  <button
+                    type="button"
+                    onClick={() => handleMenuClick(item.type, item.target)}
+                    className="text-xs text-slate-600 dark:text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
+                  >
                     {item.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
