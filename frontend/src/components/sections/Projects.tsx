@@ -50,6 +50,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             {project.tech.map((t, j) => {
               const iconMap: Record<string, string> = {
                 'React': 'devicon-react-original colored',
+                'Next.js': 'devicon-nextjs-original colored',
+                'TypeScript': 'devicon-typescript-plain colored',
                 'Tailwind': 'devicon-tailwindcss-original colored',
                 'Node.js': 'devicon-nodejs-plain colored',
                 'Express': 'devicon-express-original colored',
@@ -85,12 +87,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 const Projects = () => {
   const projects: Project[] = [
     {
-      title: 'Toko Fashion Online',
-      category: 'Web Development',
-      problem: 'Butuh website modern untuk meningkatkan penjualan.',
-      solution: 'Membuat website e-commerce dengan React dan payment gateway.',
-      result: 'Penjualan naik 35% dalam 2 bulan.',
-      tech: ['React', 'Tailwind', 'JavaScript']
+      title: 'Travel App',
+      category: 'Full-Stack Web',
+      problem: 'Butuh platform travel yang modern dan mudah digunakan.',
+      solution: 'Membuat aplikasi travel dengan Next.js, React, TypeScript, Tailwind, Node.js, Express, dan MySQL.',
+      result: 'Pengalaman booking jadi lebih cepat dan nyaman.',
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MySQL']
     },
     {
       title: 'Sistem Manajemen Sekolah',
