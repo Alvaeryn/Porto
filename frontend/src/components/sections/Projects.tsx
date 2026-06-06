@@ -8,6 +8,7 @@ interface Project {
   solution: string;
   result: string;
   tech: string[];
+  icon: string;
 }
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
@@ -76,7 +77,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         </div>
         <div className="w-full md:w-1/3 flex items-center justify-center">
           <div className="w-full h-48 bg-gradient-to-br from-cyan-200 to-teal-200 dark:from-cyan-900/50 dark:to-teal-900/50 rounded-xl flex items-center justify-center text-6xl">
-            📱
+            {project.icon}
           </div>
         </div>
       </div>
@@ -92,7 +93,8 @@ const Projects = () => {
       problem: 'Butuh platform travel yang modern dan mudah digunakan.',
       solution: 'Membuat aplikasi travel dengan Next.js, React, TypeScript, Tailwind, Node.js, Express, dan MySQL.',
       result: 'Pengalaman booking jadi lebih cepat dan nyaman.',
-      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MySQL']
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MySQL'],
+      icon: '✈️'
     },
     {
       title: 'Sistem Manajemen Sekolah',
@@ -100,7 +102,8 @@ const Projects = () => {
       problem: 'Sekolah butuh sistem untuk manajemen siswa dan nilai.',
       solution: 'Membuat web app dengan Laravel dan MySQL.',
       result: 'Proses manajemen jadi lebih cepat dan terstruktur.',
-      tech: ['PHP', 'Laravel', 'JavaScript']
+      tech: ['PHP', 'Laravel', 'JavaScript'],
+      icon: '🏫'
     },
     {
       title: 'Absensi Siswa Berbasis QRCODE',
@@ -108,7 +111,8 @@ const Projects = () => {
       problem: 'Proses absensi manual memakan waktu dan rawan kesalahan.',
       solution: 'Sistem absensi dengan QRCODE menggunakan React, Express, dan MySQL.',
       result: 'Absensi jadi lebih cepat, akurat, dan tercatat otomatis.',
-      tech: ['React', 'Express', 'MySQL']
+      tech: ['React', 'Express', 'MySQL'],
+      icon: '📱'
     },
     {
       title: 'Dashboard Analytics',
@@ -116,7 +120,8 @@ const Projects = () => {
       problem: 'Butuh dashboard untuk monitoring data.',
       solution: 'Desain dan develop dashboard dengan chart interaktif.',
       result: 'Pengambilan keputusan lebih cepat dan akurat.',
-      tech: ['Figma', 'React', 'D3.js']
+      tech: ['Figma', 'React', 'D3.js'],
+      icon: '📊'
     }
   ];
 
