@@ -1,4 +1,5 @@
 import { smoothScrollTo } from './scroll';
+import { updateState } from '../store/locationStore';
 
 export const getLocationState = () => ({
   pathname: window.location.pathname,
@@ -13,7 +14,7 @@ export const navigateTo = (target: string) => {
   }
 
   window.history.pushState({}, '', target);
-  window.dispatchEvent(new PopStateEvent('popstate'));
+  updateState();
 };
 
 export const navigateToSection = (hash: string) => {
