@@ -79,6 +79,13 @@ const Hero = () => {
             ))}
           </div>
           <div className="h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
+
+          {/* Scroll Indicator */}
+          <div className="mt-8 mb-8 flex justify-center">
+            <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-600 rounded-full flex justify-center pt-2">
+              <div className="w-1 h-2 bg-slate-600 dark:bg-slate-400 rounded-full animate-bounce"></div>
+            </div>
+          </div>
         </div>
 
         {/* Teknologi yang Saya Gunakan */}
@@ -107,13 +114,6 @@ const Hero = () => {
               <span className="font-semibold text-slate-700 dark:text-slate-300 text-sm group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{tech.name}</span>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-600 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-slate-600 dark:bg-slate-400 rounded-full animate-bounce"></div>
         </div>
       </div>
     </section>
