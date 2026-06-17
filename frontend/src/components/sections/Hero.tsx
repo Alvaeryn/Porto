@@ -68,8 +68,8 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap mb-8">
             {[
               { icon: 'devicon-amazonwebservices-plain-wordmark' },
-              { icon: 'fab fa-stripe-s' },
-              { icon: 'devicon-google-plain' },
+              { icon: 'fab fa-stripe' },
+              { icon: 'fab fa-google-pay' },
               { icon: 'devicon-apple-original' },
               { icon: 'devicon-android-plain' }
             ].map((brand, i) => (
