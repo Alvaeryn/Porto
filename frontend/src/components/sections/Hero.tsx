@@ -74,7 +74,7 @@ const Hero = () => {
               { icon: 'devicon-android-plain' }
             ].map((brand, i) => (
               <div key={i} className="text-3xl text-slate-400 dark:text-slate-600 grayscale hover:grayscale-0 transition-all duration-300">
-                <i className={brand.icon} style={{ fontSize: '1.75rem' }}></i>
+                <i className={brand.icon} style={{ fontSize: '1.5rem' }}></i>
               </div>
             ))}
           </div>
