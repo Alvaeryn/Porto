@@ -6,6 +6,7 @@ interface Testimonial {
   role: string;
   content: string;
   rating: number;
+  photo: string;
 }
 
 const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => {
@@ -23,9 +24,16 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
         {'⭐'.repeat(testimonial.rating)}
       </div>
       <p className="text-slate-700 dark:text-slate-300 mb-6 text-lg italic">"{testimonial.content}"</p>
-      <div>
-        <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
-        <p className="text-slate-500 dark:text-slate-400 text-sm">{testimonial.role}</p>
+      <div className="flex items-center gap-4">
+        <img 
+          src={testimonial.photo} 
+          alt={testimonial.name} 
+          className="w-14 h-14 rounded-full object-cover border-2 border-cyan-200 dark:border-cyan-800"
+        />
+        <div>
+          <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm">{testimonial.role}</p>
+        </div>
       </div>
     </div>
   );
@@ -37,19 +45,22 @@ const Testimonials = () => {
       name: 'Rizky Pratama',
       role: 'Owner Toko Fashion',
       content: 'Hasilnya luar biasa! Website toko online saya jadi cepat dan profesional. Penjualan naik 35%!',
-      rating: 5
+      rating: 5,
+      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200'
     },
     {
       name: 'Siti Nurhaliza',
       role: 'Founder Startup Edukasi',
       content: 'Desain UI/UXnya sangat intuitive dan modern. User feedbacknya positif banget!',
-      rating: 5
+      rating: 5,
+      photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200'
     },
     {
       name: 'Ahmad Fauzi',
       role: 'CEO Tech Company',
       content: 'Kerja sama dengan Alvaeryn sangat menyenangkan. Komunikasi dan hasilnya sesuai ekspektasi!',
-      rating: 5
+      rating: 5,
+      photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200'
     }
   ];
 

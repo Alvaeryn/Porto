@@ -68,31 +68,27 @@ const Projects = () => {
     {
       title: 'Travel App',
       category: 'Full-Stack Web',
-      description: 'Platform travel untuk booking tiket dan hotel dengan antarmuka yang modern dan user-friendly.',
+      description: 'Platform travel untuk booking paket wisata dengan antarmuka modern dan integrasi pembayaran Midtrans.',
       tech: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MySQL'],
       image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=800',
-    },
-    {
-      title: 'Sistem Manajemen Sekolah',
-      category: 'Full-Stack Web',
-      description: 'Sistem informasi sekolah untuk manajemen data siswa, guru, dan nilai secara terintegrasi.',
-      tech: ['PHP', 'Laravel', 'JavaScript'],
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/Alvaeryn/Travel-App',
     },
     {
       title: 'Absensi Siswa Berbasis QRCODE',
       category: 'Full-Stack Web',
-      description: 'Aplikasi absensi otomatis dengan scan QRCODE untuk mempercepat dan memudahkan proses absensi.',
-      tech: ['React', 'Express', 'MySQL'],
+      description: 'Sistem absensi modern dengan face recognition dan QR code untuk SD.',
+      tech: ['React', 'Express', 'MySQL', 'JavaScript'],
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/Alvaeryn/Absensi-Siswa-Berbasis-QRCODE',
     },
     {
-      title: 'Dashboard Analytics',
-      category: 'UI/UX Design',
-      description: 'Dashboard interaktif untuk monitoring dan visualisasi data dengan chart yang informatif.',
-      tech: ['Figma', 'React', 'Tailwind'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    }
+      title: 'Portfolio Website',
+      category: 'Full-Stack Web',
+      description: 'Website portfolio modern dengan React, TypeScript, dan Tailwind CSS.',
+      tech: ['React', 'TypeScript', 'Tailwind', 'Node.js'],
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/Alvaeryn/Porto',
+    },
   ];
 
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
