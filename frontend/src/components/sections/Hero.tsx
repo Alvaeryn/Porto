@@ -5,7 +5,18 @@ const Hero = () => {
   const { ref, opacity, scale } = useScrollFade();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-slate-50 to-cyan-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 pt-32 pb-24 relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-slate-50 to-cyan-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 pt-12 pb-24 relative overflow-hidden">
+      {/* Trusted By Section */}
+      <div className="absolute top-8 left-0 right-0 text-center py-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+        <p className="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest mb-3">Dipercaya oleh Startup & UMKM Mapan</p>
+        <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap">
+          {['aws', 'stripe', 'gpay', 'apple', 'android'].map((brand, i) => (
+            <div key={i} className="text-3xl text-slate-400 dark:text-slate-600 grayscale hover:grayscale-0 transition-all duration-300">
+              <i className={`devicon-${brand}-plain`} style={{ fontSize: '2rem' }}></i>
+            </div>
+          ))}
+        </div>
+      </div>
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-20 left-10 w-64 h-64 bg-pink-200 dark:bg-pink-900/20 rounded-full blur-3xl"></div>
