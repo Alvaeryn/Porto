@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero';
+import TrustedBy from '../components/sections/TrustedBy';
 import Services from '../components/sections/Services';
 import Projects from '../components/sections/Projects';
 import Team from '../components/sections/Team';
@@ -10,6 +11,7 @@ import Contact from '../components/sections/Contact';
 const HomePage = () => (
   <>
     <Hero />
+    <TrustedBy />
     <Services />
     <Projects />
     <Team />
