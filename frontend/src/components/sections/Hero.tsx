@@ -66,9 +66,15 @@ const Hero = () => {
         <div className="mb-12">
           <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Dipercaya oleh Startup & UMKM Mapan</p>
           <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap mb-8">
-            {['aws', 'stripe', 'gpay', 'apple', 'android'].map((brand, i) => (
+            {[
+              { icon: 'devicon-amazonwebservices-plain-wordmark' },
+              { icon: 'devicon-stripe-plain' },
+              { icon: 'devicon-google-plain' },
+              { icon: 'devicon-apple-original' },
+              { icon: 'devicon-android-plain' }
+            ].map((brand, i) => (
               <div key={i} className="text-3xl text-slate-400 dark:text-slate-600 grayscale hover:grayscale-0 transition-all duration-300">
-                <i className={`devicon-${brand}-plain`} style={{ fontSize: '2.5rem' }}></i>
+                <i className={brand.icon} style={{ fontSize: '2.5rem' }}></i>
               </div>
             ))}
           </div>
