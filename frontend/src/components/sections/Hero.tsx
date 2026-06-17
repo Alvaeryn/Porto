@@ -68,13 +68,13 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap mb-8">
             {[
               { icon: 'devicon-amazonwebservices-plain-wordmark' },
-              { icon: 'devicon-stripe-plain' },
+              { icon: 'devicon-vercel-original' },
               { icon: 'devicon-google-plain' },
               { icon: 'devicon-apple-original' },
               { icon: 'devicon-android-plain' }
             ].map((brand, i) => (
               <div key={i} className="text-3xl text-slate-400 dark:text-slate-600 grayscale hover:grayscale-0 transition-all duration-300">
-                <i className={brand.icon} style={{ fontSize: '2.5rem' }}></i>
+                <i className={brand.icon} style={{ fontSize: '1.75rem' }}></i>
               </div>
             ))}
           </div>
