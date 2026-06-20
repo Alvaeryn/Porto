@@ -89,6 +89,46 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/Alvaeryn/Porto',
     },
+    {
+      title: 'Aplikasi Perkuliahan',
+      category: 'Full-Stack Web',
+      description: 'Sistem manajemen perkuliahan untuk mengelola data mahasiswa, jadwal, dan nilai.',
+      tech: ['PHP', 'MySQL'],
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/ychaara/Aplikasi_Perkuliahan',
+    },
+    {
+      title: 'Simpati Flutter',
+      category: 'Mobile App',
+      description: 'Aplikasi mobile untuk manajemen simpati yang dibangun dengan Flutter.',
+      tech: ['Flutter', 'Dart'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/ychaara/simpati_flutter',
+    },
+    {
+      title: 'Tokoaki Demo',
+      category: 'Full-Stack Web',
+      description: 'Demo aplikasi toko online untuk manajemen produk dan transaksi.',
+      tech: ['PHP', 'MySQL'],
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/ychaara/tokoakidemo',
+    },
+    {
+      title: 'Perpustakaan',
+      category: 'Full-Stack Web',
+      description: 'Sistem manajemen perpustakaan untuk mengelola buku, peminjaman, dan anggota.',
+      tech: ['PHP', 'MySQL'],
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/ychaara/Perpustakaan',
+    },
+    {
+      title: 'Fluttix App',
+      category: 'Mobile App',
+      description: 'Aplikasi streaming dan booking tiket film dengan antarmuka yang menarik.',
+      tech: ['Flutter', 'Dart'],
+      image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=800',
+      link: 'https://github.com/ychaara/Fluttix_App',
+    },
   ];
 
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
