@@ -95,7 +95,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen perkuliahan dengan antarmuka yang user-friendly.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Aplikasi_Perkuliahan',
     },
     {
