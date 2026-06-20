@@ -95,7 +95,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen perkuliahan dengan antarmuka yang user-friendly.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Aplikasi_Perkuliahan',
     },
     {
@@ -103,7 +103,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen simpati yang dibangun dengan Flutter.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/simpati_flutter',
     },
     {
@@ -111,7 +111,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Demo aplikasi mobile toko online untuk manajemen produk dan transaksi.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/tokoakidemo',
     },
     {
@@ -119,7 +119,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile manajemen perpustakaan untuk mengelola buku dan peminjaman.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Perpustakaan',
     },
     {
@@ -127,7 +127,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi streaming dan booking tiket film dengan antarmuka yang menarik.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Fluttix_App',
     },
   ];
