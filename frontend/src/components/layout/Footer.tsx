@@ -17,10 +17,10 @@ const Footer = () => {
   ];
 
   const contactItems = [
-    { name: 'WhatsApp', href: 'https://wa.me/6281234567890' },
-    { name: 'Email', href: 'mailto:alvaeryn@example.com' },
+    { name: 'WhatsApp', href: 'https://wa.me/628818411915' },
+    { name: 'Email', href: 'mailto:vaeran2904@gmail.com' },
     { name: 'Telegram', href: 'https://t.me/alvaeryn' },
-    { name: 'GitHub', href: 'https://github.com' },
+    { name: 'GitHub', href: 'https://github.com/Alvaeryn' },
   ];
 
   const handleMenuClick = (type: 'section' | 'page', target: string) => {
