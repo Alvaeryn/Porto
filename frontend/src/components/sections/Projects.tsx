@@ -95,7 +95,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen perkuliahan dengan antarmuka yang user-friendly.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Aplikasi_Perkuliahan',
     },
     {
@@ -103,7 +103,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen simpati yang dibangun dengan Flutter.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1556656793-0885457279?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/simpati_flutter',
     },
     {
