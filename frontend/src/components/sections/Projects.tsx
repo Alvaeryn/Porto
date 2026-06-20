@@ -48,6 +48,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               'PHP': 'devicon-php-plain colored',
               'Laravel': 'devicon-laravel-plain colored',
               'Flutter': 'devicon-flutter-plain colored',
+              'Dart': 'devicon-dart-plain colored',
               'Figma': 'devicon-figma-plain colored',
             };
             return (
@@ -91,10 +92,10 @@ const Projects = () => {
     },
     {
       title: 'Aplikasi Perkuliahan',
-      category: 'Full-Stack Web',
-      description: 'Sistem manajemen perkuliahan untuk mengelola data mahasiswa, jadwal, dan nilai.',
-      tech: ['PHP', 'MySQL'],
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?auto=format&fit=crop&q=80&w=800',
+      category: 'Mobile App',
+      description: 'Aplikasi mobile untuk manajemen perkuliahan dengan antarmuka yang user-friendly.',
+      tech: ['Flutter', 'Dart'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/Aplikasi_Perkuliahan',
     },
     {
