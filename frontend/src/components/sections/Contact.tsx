@@ -29,7 +29,7 @@ const Contact = () => {
       const result = await response.json();
       
       if (result.status === 'success') {
-        alert('Pesan kamu berhasil dikirim! Saya akan segera menghubungi kamu.');
+        alert('Pesan kamu berhasil dikirim! Kami akan segera menghubungi kamu.');
         setFormData({ name: '', email: '', whatsapp: '', service: '', message: '' });
       } else {
         alert('Terjadi kesalahan, silakan coba lagi!');
@@ -77,7 +77,7 @@ const Contact = () => {
         {/* Header */}
         <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-right ${headerVisible ? 'visible' : ''}`}>
           <span className="inline-block px-6 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
-            Hubungi Saya
+            Hubungi Kami
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             Mari Wujudkan Proyek Anda
@@ -137,7 +137,7 @@ const Contact = () => {
               📩 Kirim Pesan Langsung
             </h3>
             <p className="text-center text-sm text-slate-600 dark:text-slate-400 mb-8">
-              Isi form di bawah dan pesan Anda akan terkirim langsung ke saya
+              Isi form di bawah dan pesan Anda akan terkirim langsung ke kami
             </p>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">

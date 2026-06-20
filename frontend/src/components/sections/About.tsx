@@ -10,7 +10,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-fade-down ${headerVisible ? 'visible' : ''}`}>
           <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Tentang</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Tentang Kami</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div ref={leftRef} className={`animate-on-scroll animate-fade-left ${leftVisible ? 'visible' : ''}`}>
@@ -20,12 +20,12 @@ const About = () => {
           </div>
           <div ref={rightRef} className={`animate-on-scroll animate-fade-right ${rightVisible ? 'visible' : ''}`}>
             <p className="text-lg text-slate-700 dark:text-slate-300 mb-6">
-              Hello! I'm Alvaeryn, a passionate full stack developer with a love for creating elegant and efficient solutions. 
-              I specialize in building modern web applications using the latest technologies.
+              Halo! Kami adalah Alvaeryn, tim pengembang full stack yang bersemangat dalam menciptakan solusi yang elegan dan efisien. 
+              Kami mengkhususkan diri dalam membangun aplikasi web modern dengan teknologi terbaru.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300">
-              With a keen eye for design and a commitment to writing clean, maintainable code, 
-              I strive to deliver exceptional user experiences in every project I work on.
+              Dengan ketelitian dalam desain dan komitmen untuk menulis kode yang bersih dan terawat, 
+              kami berusaha memberikan pengalaman pengguna yang luar biasa di setiap proyek yang kami kerjakan.
             </p>
           </div>
         </div>

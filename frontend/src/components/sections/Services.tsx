@@ -89,8 +89,8 @@ const Services = () => {
         }}
       >
         <div ref={headerRef} className={`text-center mb-12 animate-on-scroll animate-fade-down ${headerVisible ? 'visible' : ''}`}>
-          <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Keahlian Saya</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Layanan yang Saya Sediakan</h2>
+          <p className="text-cyan-600 dark:text-cyan-400 font-semibold uppercase tracking-wide mb-3">Keahlian Kami</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Layanan yang Kami Sediakan</h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

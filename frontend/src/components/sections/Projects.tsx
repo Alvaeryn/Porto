@@ -107,8 +107,8 @@ const Projects = () => {
       >
         <div ref={headerRef} className={`text-center mb-16 animate-on-scroll animate-scale-up ${headerVisible ? 'visible' : ''}`}>
           <span className="inline-block px-4 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-semibold uppercase tracking-wide mb-3">Portfolio</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-3">Proyek Terbaru Saya</h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kumpulan proyek yang telah saya kerjakan dengan penuh dedikasi</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-3">Proyek Terbaru Kami</h2>
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Kumpulan proyek yang telah kami kerjakan dengan penuh dedikasi</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

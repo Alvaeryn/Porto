@@ -58,7 +58,7 @@ const Hero = () => {
             }}
             className="px-8 py-3 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-full font-bold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
           >
-            Lihat Proyek Saya
+            Lihat Proyek Kami
           </button>
         </div>
 
@@ -88,9 +88,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Teknologi yang Saya Gunakan */}
+        {/* Teknologi yang Kami Gunakan */}
         <p className="text-xs font-semibold text-slate-500 dark:text-slate-500 uppercase tracking-widest mb-4">
-          Teknologi yang Saya Gunakan
+          Teknologi yang Kami Gunakan
         </p>
 
         {/* Tech Stack */}
