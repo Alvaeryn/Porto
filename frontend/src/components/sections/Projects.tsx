@@ -103,7 +103,7 @@ const Projects = () => {
       category: 'Mobile App',
       description: 'Aplikasi mobile untuk manajemen simpati yang dibangun dengan Flutter.',
       tech: ['Flutter', 'Dart'],
-      image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800',
       link: 'https://github.com/ychaara/simpati_flutter',
     },
     {
